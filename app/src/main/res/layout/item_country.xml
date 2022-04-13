@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/teal_200"
+    >
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Name"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/continent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Continent"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/officialLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Official language"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/capitalCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Capital city"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/webUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Web URL"
+        >
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></ImageView>
+</androidx.appcompat.widget.LinearLayoutCompat>

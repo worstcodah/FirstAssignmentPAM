@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<countries>
+    <country>
+        <name>Brazil</name>
+        <continent>South America</continent>
+        <capitalCity>Brasilia</capitalCity>
+        <officialLanguage>Portuguese</officialLanguage>
+        <webUrl>https://en.wikipedia.org/wiki/Brazil</webUrl>
+        <imageId>1</imageId>
+    </country>
+    <country>
+        <name>France</name>
+        <continent>Europe</continent>
+        <capitalCity>Paris</capitalCity>
+        <officialLanguage>French</officialLanguage>
+        <webUrl>https://en.wikipedia.org/wiki/France</webUrl>
+        <imageId>2</imageId>
+    </country>
+    <country>
+        <name>Japan</name>
+        <continent>Asia</continent>
+        <capitalCity>Tokyo</capitalCity>
+        <officialLanguage>Japanese</officialLanguage>
+        <webUrl>https://en.wikipedia.org/wiki/Japan</webUrl>
+        <imageId>3</imageId>
+    </country>
+</countries>
