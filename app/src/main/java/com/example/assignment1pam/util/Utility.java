@@ -33,10 +33,9 @@ public class Utility {
             capitalCity = countryNodes.item(5).getFirstChild().getTextContent();
             officialLanguage = countryNodes.item(7).getFirstChild().getTextContent();
             webUrl = countryNodes.item(9).getFirstChild().getTextContent();
-            imageUrl = countryNodes.item(11).getFirstChild().getTextContent();
 
 
-            countries.add(new Country(name, continent, capitalCity, officialLanguage, webUrl, imageUrl));
+            countries.add(new Country(name, continent, capitalCity, officialLanguage, webUrl));
         }
 
         return countries;
