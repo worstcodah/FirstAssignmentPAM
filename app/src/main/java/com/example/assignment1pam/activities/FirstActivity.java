@@ -2,6 +2,7 @@ package com.example.assignment1pam.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -43,6 +44,7 @@ public class FirstActivity extends AppCompatActivity {
             listView.setAdapter(countryAdapter);
             listView.setOnItemClickListener((adapterView, view, i, l) -> {
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                intent.putParcelableArrayListExtra("countries", (ArrayList<? extends Parcelable>) countries);
                 startActivity(intent);
             });
 

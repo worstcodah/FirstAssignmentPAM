@@ -21,27 +21,21 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class ThirdActivity extends AppCompatActivity {
     private ArrayList<Country> countries = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-        try {
-            this.countries = Utility.getCountries(getResources().openRawResource(R.raw.countries));
-            CountryAdapter countryAdapter = new CountryAdapter(getBaseContext(), R.layout.item_country, countries, DetailType.ALL);
-            ListView listView = findViewById(R.id.third_lv);
-            listView.setAdapter(countryAdapter);
-            listView.setOnItemClickListener((adapterView, view, i, l) -> {
-                Intent intent = new Intent(getApplicationContext(), FourthActivity.class);
-                intent.putExtra("webUrl", ((Country)listView.getItemAtPosition(i)).getWebUrl());
-                startActivity(intent);
-            });
+        this.countries = getIntent().getParcelableArrayListExtra("countries");
+        CountryAdapter countryAdapter = new CountryAdapter(getBaseContext(), R.layout.item_country, countries, DetailType.ALL);
+        ListView listView = findViewById(R.id.third_lv);
+        listView.setAdapter(countryAdapter);
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(getApplicationContext(), FourthActivity.class);
+            intent.putExtra("webUrl", ((Country) listView.getItemAtPosition(i)).getWebUrl());
+            startActivity(intent);
+        });
 
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        }
+
     }
 }

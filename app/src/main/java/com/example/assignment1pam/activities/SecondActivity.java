@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -22,27 +23,21 @@ import java.util.ArrayList;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class SecondActivity extends AppCompatActivity {
-    private ArrayList<Country> countries = new ArrayList<>();
+    private ArrayList<Country> countries;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        try {
-            this.countries = Utility.getCountries(getResources().openRawResource(R.raw.countries));
-            CountryAdapter countryAdapter = new CountryAdapter(getBaseContext(), R.layout.item_country, countries, DetailType.MEDIUM);
-            ListView listView = findViewById(R.id.second_lv);
-            listView.setAdapter(countryAdapter);
-            listView.setOnItemClickListener((adapterView, view, i, l) -> {
-                Intent intent = new Intent(getApplicationContext(), ThirdActivity.class);
-                startActivity(intent);
-            });
+        this.countries = getIntent().getParcelableArrayListExtra("countries");
+        CountryAdapter countryAdapter = new CountryAdapter(getBaseContext(), R.layout.item_country, countries, DetailType.MEDIUM);
+        ListView listView = findViewById(R.id.second_lv);
+        listView.setAdapter(countryAdapter);
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(getApplicationContext(), ThirdActivity.class);
+            intent.putParcelableArrayListExtra("countries", (ArrayList<? extends Parcelable>) countries);
+            startActivity(intent);
+        });
 
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        }
     }
 }

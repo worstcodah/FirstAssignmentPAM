@@ -1,6 +1,9 @@
 package com.example.assignment1pam.models;
 
-public class Country {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Country implements Parcelable {
     private String name;
     private String continent;
     private String capitalCity;
@@ -15,6 +18,26 @@ public class Country {
         this.webUrl = webUrl;
     }
 
+
+    protected Country(Parcel in) {
+        name = in.readString();
+        continent = in.readString();
+        capitalCity = in.readString();
+        officialLanguage = in.readString();
+        webUrl = in.readString();
+    }
+
+    public static final Creator<Country> CREATOR = new Creator<Country>() {
+        @Override
+        public Country createFromParcel(Parcel in) {
+            return new Country(in);
+        }
+
+        @Override
+        public Country[] newArray(int size) {
+            return new Country[size];
+        }
+    };
 
     public void setName(String name) {
         this.name = name;
@@ -54,5 +77,19 @@ public class Country {
 
     public void setWebUrl(String webUrl) {
         this.webUrl = webUrl;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(continent);
+        parcel.writeString(capitalCity);
+        parcel.writeString(officialLanguage);
+        parcel.writeString(webUrl);
     }
 }
