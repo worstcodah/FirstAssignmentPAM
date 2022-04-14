@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".activities.FourthActivity">
 
-    <ListView
-        android:id="@+id/fourth_lv"
+    <WebView
+        android:id="@+id/fourth_wv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        ></ListView>
+        ></WebView>
 </androidx.constraintlayout.widget.ConstraintLayout>

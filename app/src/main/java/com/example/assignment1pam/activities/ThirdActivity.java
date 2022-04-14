@@ -32,6 +32,7 @@ public class ThirdActivity extends AppCompatActivity {
             listView.setAdapter(countryAdapter);
             listView.setOnItemClickListener((adapterView, view, i, l) -> {
                 Intent intent = new Intent(getApplicationContext(), FourthActivity.class);
+                intent.putExtra("webUrl", ((Country)listView.getItemAtPosition(i)).getWebUrl());
                 startActivity(intent);
             });
 
