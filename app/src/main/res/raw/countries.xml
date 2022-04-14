@@ -6,7 +6,7 @@
         <capitalCity>Brasilia</capitalCity>
         <officialLanguage>Portuguese</officialLanguage>
         <webUrl>https://en.wikipedia.org/wiki/Brazil</webUrl>
-        <imageId>1</imageId>
+        <imageUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/2560px-Flag_of_Brazil.svg.png</imageUrl>
     </country>
     <country>
         <name>France</name>
@@ -14,7 +14,7 @@
         <capitalCity>Paris</capitalCity>
         <officialLanguage>French</officialLanguage>
         <webUrl>https://en.wikipedia.org/wiki/France</webUrl>
-        <imageId>2</imageId>
+        <imageUrl>https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1200px-Flag_of_France.svg.png</imageUrl>
     </country>
     <country>
         <name>Japan</name>
@@ -22,6 +22,6 @@
         <capitalCity>Tokyo</capitalCity>
         <officialLanguage>Japanese</officialLanguage>
         <webUrl>https://en.wikipedia.org/wiki/Japan</webUrl>
-        <imageId>3</imageId>
+        <imageUrl>https://www.vedi-express.com/34506-large_default/japan-flag.jpg</imageUrl>
     </country>
 </countries>

@@ -23,8 +23,7 @@ public class Utility {
         Document document = docBuilder.parse(is);
 
         NodeList countryNodeList = document.getElementsByTagName("country");
-        String name = null, continent = null, officialLanguage = null, capitalCity = null, webUrl = null;
-        int imageId = 0;
+        String name = null, continent = null, officialLanguage = null, capitalCity = null, webUrl = null, imageUrl = null;
 
         for (int i = 0; i < countryNodeList.getLength(); i++) {
 
@@ -34,10 +33,10 @@ public class Utility {
             capitalCity = countryNodes.item(5).getFirstChild().getTextContent();
             officialLanguage = countryNodes.item(7).getFirstChild().getTextContent();
             webUrl = countryNodes.item(9).getFirstChild().getTextContent();
-            imageId = Integer.parseInt(countryNodes.item(11).getFirstChild().getTextContent());
+            imageUrl = countryNodes.item(11).getFirstChild().getTextContent();
 
 
-            countries.add(new Country(name, continent, capitalCity, officialLanguage, webUrl, imageId));
+            countries.add(new Country(name, continent, capitalCity, officialLanguage, webUrl, imageUrl));
         }
 
         return countries;

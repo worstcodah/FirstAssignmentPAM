@@ -6,23 +6,23 @@ public class Country {
     private String capitalCity;
     private String officialLanguage;
     private String webUrl;
-    private int imageId;
+    private String imageUrl;
 
-    public Country(String name, String continent, String capitalCity, String officialLanguage, String webUrl, int imageId) {
+    public Country(String name, String continent, String capitalCity, String officialLanguage, String webUrl, String imageUrl) {
         this.name = name;
         this.continent = continent;
         this.capitalCity = capitalCity;
         this.officialLanguage = officialLanguage;
         this.webUrl = webUrl;
-        this.imageId = imageId;
+        this.imageUrl = imageUrl;
     }
 
-    public int getImageId() {
-        return imageId;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public void setName(String name) {
